@@ -1,3 +1,5 @@
+import * as actionTypes from "../actions/actions";
+
 const initialState = {
     topics: []
 };
@@ -5,15 +7,15 @@ const initialState = {
 const topicReducer = (state = initialState, action) => 
 {
     switch (action.type) {
-        case 'GET_TOPICS':
+        case actionTypes.GET_TOPICS:
             return {
                 topics: []
             }
-        case 'UPDATE_TOPIC':
+        case actionTypes.UPDATE_TOPIC:
             return {
                 topics: []
             }
-        case 'DELETE_TOPIC':
+        case actionTypes.DELETE_TOPIC:
             return {
                 topics: []
             }
