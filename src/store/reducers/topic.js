@@ -8,10 +8,9 @@ const topicReducer = (state = initialState, action) =>
 {
     switch (action.type) {
         case actionTypes.SET_TOPICS:
-            return {
-                ...state,
-                topics: action.payload.topics
-            }
+            return [
+                ...action.topics
+            ]
         case actionTypes.UPDATE_TOPIC:
             return {
                 state
@@ -24,7 +23,6 @@ const topicReducer = (state = initialState, action) =>
         default:
             break;
     }
-
     return state;
 };
 

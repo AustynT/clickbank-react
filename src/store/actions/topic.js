@@ -36,9 +36,7 @@ export const setTopics = (topics) =>
 {
     return {
         type: actionTypes.SET_TOPICS,
-        payload: {
-            topics
-        }
+        topics: topics
     }
 }
 
