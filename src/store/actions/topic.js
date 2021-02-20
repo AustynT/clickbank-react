@@ -1,11 +1,5 @@
+import axios from 'axios';
 import * as actionTypes from './actionsTypes';
-
-
-export const getTopic = () => {
-    return {
-        type: actionTypes.GET_TOPICS
-    }
-}
 
 export const createTopic = (title) => {
     return {
@@ -35,5 +29,31 @@ export const deleteTopic = (id) => {
         {
             id: id
         }
+    }
+}
+
+export const setTopics = (topics) => 
+{
+    return {
+        type: actionTypes.SET_TOPICS,
+        payload: {
+            topics
+        }
+    }
+}
+
+export const initTopics = () =>
+{
+    return dispatch => 
+    {
+        axios.get('http://127.0.0.1:8000/api/topics')
+        .then(response => 
+        {
+            dispatch(setTopics(response.data));
+        }).catch(errror => 
+            {
+                console.log(errror)
+            }
+        )
     }
 }

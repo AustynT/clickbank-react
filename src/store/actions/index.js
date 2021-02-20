@@ -1,0 +1,3 @@
+export {
+    initTopics    
+} from './topic';

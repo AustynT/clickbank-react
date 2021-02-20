@@ -7,22 +7,24 @@ const initialState = {
 const topicReducer = (state = initialState, action) => 
 {
     switch (action.type) {
-        case actionTypes.GET_TOPICS:
+        case actionTypes.SET_TOPICS:
             return {
-                topics: []
+                ...state,
+                topics: action.payload.topics
             }
         case actionTypes.UPDATE_TOPIC:
             return {
-                topics: []
+                state
             }
         case actionTypes.DELETE_TOPIC:
             return {
-                topics: []
+                state
             }
     
         default:
             break;
     }
+
     return state;
 };
 
