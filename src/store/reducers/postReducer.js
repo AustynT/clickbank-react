@@ -8,9 +8,10 @@ const postReducer = (state = initialState, action) =>
 {
     switch (action.type) {
         case actionTypes.SET_POSTS:
-            return [
-                ...action.topics
-            ]
+            console.log(action.posts)
+            return  {
+                posts: action.posts
+            } 
         case actionTypes.UPDATE_POST:
             return {
                 state
