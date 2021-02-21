@@ -24,20 +24,4 @@ class Container extends Component
 }
 
 
-
-// const mapDispatchToProps = (dispatch) =>
-// {
-// 	return {
-// 		getTopics: () => dispatch(topicActions.initTopics())
-// 	}
-// }
-
-// const mapStateToProps = (state) =>
-// {
-// 	return {
-// 		topics: state.topic
-// 	}
-// }
-
-
 export default Container;
