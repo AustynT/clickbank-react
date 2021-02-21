@@ -22,4 +22,18 @@ class TopicPost extends Component
 	}
 }
 
-export default withRouter(TopicPost);
+const mapDispatchToProps = (dispatch) =>
+{
+	return {
+
+	}
+}
+
+const mapStateToProps = (state) =>
+{
+	return {
+		topics: state.topic
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(TopicPost));
