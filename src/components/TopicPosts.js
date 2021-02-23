@@ -50,7 +50,7 @@ class TopicPost extends Component {
 
 		return (
 			<div>
-				<div className="fixed">Posts Page</div>
+				<div className="start-row-2">Posts Page</div>
 				{ postsArray}
 			</div>
 		)
