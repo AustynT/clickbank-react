@@ -31,7 +31,7 @@ class Navbar extends Component
             });
         }
         return(
-            <nav className="row-start-1 row-span-1 fixed w-full">
+            <nav className="h-64 row-start-1 row-span-1 fixed w-full">
                 <ul className="flex flex-row justify-evenly sticky">
                     <li><Link  to="/">Home</Link></li>
                     {links}
