@@ -13,7 +13,7 @@ class Container extends Component
 	render()
 	{
 		return(
-			<div className="row-span-3">
+			<div className="row-span-3 overflow-auto">
                 <Switch>
                     <Route exact path="/topic/:title" component={TopicPost} />
                     <Route exact path="/" component={Home}/>
