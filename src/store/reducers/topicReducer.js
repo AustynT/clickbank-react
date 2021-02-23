@@ -8,9 +8,10 @@ const topicReducer = (state = initialState, action) =>
 {
     switch (action.type) {
         case actionTypes.SET_TOPICS:
-            return [
-                ...action.topics
-            ]
+            return {
+                ...state,
+                topics: action.topics
+            }
         case actionTypes.UPDATE_TOPIC:
             return {
                 state

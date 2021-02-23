@@ -3,7 +3,8 @@ import {Link} from 'react-router-dom';
 import * as topicActions from '../store/actions/index';
 import { connect } from 'react-redux';
 
-class Navbar extends Component {
+class Navbar extends Component 
+{
 
     componentDidMount()
 	{
@@ -12,7 +13,9 @@ class Navbar extends Component {
 
     render(){
 
-        const topics = this.props.topics;
+
+        console.log(this.props);
+        const topics = this.props.topic.topics;
         let links = null;
         if(Array.isArray(topics))
         {
@@ -49,7 +52,7 @@ const mapDispatchToProps = (dispatch) =>
 const mapStateToProps = (state) =>
 {
 	return {
-		topics: state.topic
+		topic: state.topic
 	}
 }
 

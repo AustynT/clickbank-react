@@ -8,7 +8,6 @@ const postReducer = (state = initialState, action) =>
 {
     switch (action.type) {
         case actionTypes.SET_POSTS:
-            console.log(action.posts)
             return  {
                 posts: action.posts
             } 
