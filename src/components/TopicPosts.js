@@ -29,14 +29,11 @@ import Post from "./Post";
 class TopicPost extends Component {
 	componentDidMount = () =>
 	{
-
-		console.log(this.props);
 		const { id } = this.props.location.state.topic;
 		this.props.getPosts(id);
 	}
 
 	componentDidUpdate = (prevProps) => {
-		console.log('fired');
 		const { id: prevId } = prevProps.location.state.topic;
 		const { id } = this.props.location.state.topic;
 
