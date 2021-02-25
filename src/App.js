@@ -10,10 +10,10 @@ class App extends Component
   {
     return (
       <BrowserRouter>
-      <div className="overflow-y-hidden h-screen grid grid-rows-8 grid-cols-12">
+      <div className="h-screen grid grid-rows-layout grid-cols-6">
         <Navbar/>
         <Container />
-        <div className="row-start-7 object-top">footer</div>
+        <div className="h-12 row-start-6">footer</div>
       </div>
       </BrowserRouter>
     );

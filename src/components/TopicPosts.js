@@ -49,9 +49,11 @@ class TopicPost extends Component {
 		}));
 
 		return (
-			<div>
-				<div className="start-row-2">Posts Page</div>
-				{ postsArray}
+			<div className="grid grid-cols-6 mt-6" >
+				<div className="fixed">Posts Page</div>
+				<div className="col-start-2 col-end-6">
+					{ postsArray}
+				</div>
 			</div>
 		)
 	}
