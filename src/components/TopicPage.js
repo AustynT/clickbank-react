@@ -25,20 +25,39 @@ class TopicPage extends Component {
 	render = () => {
 		let title = this.props.location.state.topic.title
 		let posts = this.props.posts.posts;
-		console.log(this.props);
-		// let postsArray = (posts.map((post, i) => {
-		// 	return (<Post key={i} post={post} />)
+		console.log(this.props.ads.ads);
+		let postsArray = (posts.map((post, i) => {
+			return (<Post key={i} post={post} />)
+		}));
+
+		// let adsArray = (posts.map((post, i) => {
+		// 	return (<Ad key={i} post={post} />)
 		// }));
 
 		return (
-			<div className="h-full grid grid-cols-6 grid-rows-4" >
-				<div className="row-start-1 flex justify-center">
-				<div  className="fixed">{title}</div>
+			<div className="h-full grid grid-cols-14 grid-rows-6 " >
+				<div className=" col-start-1 col-span-1 row-start-1 row-span-1 flex justify-center">
+					<div className="">{title}</div>
 				</div>
-
-				{/* <div className="col-start-2 col-span-5">
+				<div className="col-start-4 col-span-9 row-start-1 row-end-7 overflow-auto">
 					{ postsArray}
-				</div> */}
+				</div>
+				<div className="col-start-1 col-span-2 row-span-5">
+				<div className="flex items-center flex-col h-full">
+						<div className="h-full">ads</div>
+						<div className="h-full">ads</div>
+						<div className="h-full">ads</div>
+						<div className="h-full">ads</div>
+					</div>
+				</div>
+				<div className="col-start-13 col-span-2 row-span-5">
+					<div className="flex items-center flex-col h-full">
+						<div className="h-full">ads</div>
+						<div className="h-full">ads</div>
+						<div className="h-full">ads</div>
+						<div className="h-full">ads</div>
+					</div>
+				</div>
 			</div>
 		)
 	}
