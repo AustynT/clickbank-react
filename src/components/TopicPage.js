@@ -43,6 +43,7 @@ class TopicPage extends Component {
 	}
 
 	render = () => {
+		let title = this.props.location.state.topic.title
 		let posts = this.props.posts.posts;
 		let postsArray = (posts.map((post, i) => {
 			return (<Post key={i} post={post} />)
@@ -51,7 +52,7 @@ class TopicPage extends Component {
 		return (
 			<div className="h-full grid grid-cols-6 grid-rows-4" >
 				<div className="row-start-1 flex justify-center">
-				<div  className="fixed">Posts Page</div>
+				<div  className="fixed">{title}</div>
 				</div>
 
 				<div className="col-start-2 col-span-5">
