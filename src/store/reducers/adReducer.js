@@ -6,7 +6,8 @@ const initialState = {
 
 const adReducer = (state = initialState, action) => 
 {
-    switch (action.type) {
+    switch (action.type) 
+    {
         case actionTypes.SET_POSTS:
             return  {
                 posts: action.posts

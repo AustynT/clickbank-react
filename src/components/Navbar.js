@@ -11,10 +11,8 @@ class Navbar extends Component
 		this.props.getTopics();
 	}
 
-    render(){
-
-
-        console.log(this.props);
+    render()
+    {
         const topics = this.props.topic.topics;
         let links = null;
         if(Array.isArray(topics))
