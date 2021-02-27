@@ -25917,7 +25917,7 @@ video {
 }
 
 .grid-rows-layout {
-  grid-template-rows: 100px minmax(900px, 1fr) 100px;
+  grid-template-rows: 100px minmax(400px, 1fr) 100px;
 }
 
 .auto-rows-auto {
@@ -54505,7 +54505,7 @@ video {
   }
 
   .sm\:grid-rows-layout {
-    grid-template-rows: 100px minmax(900px, 1fr) 100px;
+    grid-template-rows: 100px minmax(400px, 1fr) 100px;
   }
 
   .sm\:auto-rows-auto {
@@ -83063,7 +83063,7 @@ video {
   }
 
   .md\:grid-rows-layout {
-    grid-template-rows: 100px minmax(900px, 1fr) 100px;
+    grid-template-rows: 100px minmax(400px, 1fr) 100px;
   }
 
   .md\:auto-rows-auto {
@@ -111621,7 +111621,7 @@ video {
   }
 
   .lg\:grid-rows-layout {
-    grid-template-rows: 100px minmax(900px, 1fr) 100px;
+    grid-template-rows: 100px minmax(400px, 1fr) 100px;
   }
 
   .lg\:auto-rows-auto {
@@ -140179,7 +140179,7 @@ video {
   }
 
   .xl\:grid-rows-layout {
-    grid-template-rows: 100px minmax(900px, 1fr) 100px;
+    grid-template-rows: 100px minmax(400px, 1fr) 100px;
   }
 
   .xl\:auto-rows-auto {
@@ -168737,7 +168737,7 @@ video {
   }
 
   .\32xl\:grid-rows-layout {
-    grid-template-rows: 100px minmax(900px, 1fr) 100px;
+    grid-template-rows: 100px minmax(400px, 1fr) 100px;
   }
 
   .\32xl\:auto-rows-auto {

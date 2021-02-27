@@ -5,6 +5,66 @@ import { withRouter } from "react-router";
 import * as topicActions from '../store/actions/index';
 import Post from "./Post";
 
+class TopicPage extends Component {
+	componentDidMount = () =>
+	{
+		const { id } = this.props.location.state.topic;
+		this.props.getPosts(id);
+		this.props.getAds(id);
+	}
+
+	componentDidUpdate = (prevProps) => {
+		const { id: prevId } = prevProps.location.state.topic;
+		const { id } = this.props.location.state.topic;
+
+		if (id !== prevId) {
+			this.props.getPosts(id);
+		}
+	}
+
+	render = () => {
+		let title = this.props.location.state.topic.title
+		let posts = this.props.posts.posts;
+		console.log(this.props);
+		// let postsArray = (posts.map((post, i) => {
+		// 	return (<Post key={i} post={post} />)
+		// }));
+
+		return (
+			<div className="h-full grid grid-cols-6 grid-rows-4" >
+				<div className="row-start-1 flex justify-center">
+				<div  className="fixed">{title}</div>
+				</div>
+
+				{/* <div className="col-start-2 col-span-5">
+					{ postsArray}
+				</div> */}
+			</div>
+		)
+	}
+}
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		getPosts: (id) => dispatch(topicActions.initPosts(id)),
+		getAds: (id) =>  dispatch(topicActions.initAds(id)) 
+	}
+}
+
+const mapStateToProps = (state) => {
+	return {
+		posts: state.posts,
+		ads: state.ads
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(TopicPage));
+
+
+
+
+//React hook
+
 
 // const TopicPost = (props) => {
 // 	const { id } = props.location.state.topic;
@@ -25,54 +85,3 @@ import Post from "./Post";
 // 	)
 // }
 // import * as actionTypes from "../store/actions/actionsTypes";
-
-class TopicPage extends Component {
-	componentDidMount = () =>
-	{
-		const { id } = this.props.location.state.topic;
-		this.props.getPosts(id);
-	}
-
-	componentDidUpdate = (prevProps) => {
-		const { id: prevId } = prevProps.location.state.topic;
-		const { id } = this.props.location.state.topic;
-
-		if (id !== prevId) {
-			this.props.getPosts(id);
-		}
-	}
-
-	render = () => {
-		let title = this.props.location.state.topic.title
-		let posts = this.props.posts.posts;
-		let postsArray = (posts.map((post, i) => {
-			return (<Post key={i} post={post} />)
-		}));
-
-		return (
-			<div className="h-full grid grid-cols-6 grid-rows-4" >
-				<div className="row-start-1 flex justify-center">
-				<div  className="fixed">{title}</div>
-				</div>
-
-				<div className="col-start-2 col-span-5">
-					{ postsArray}
-				</div>
-			</div>
-		)
-	}
-}
-
-const mapDispatchToProps = (dispatch) => {
-	return {
-		getPosts: (id) => dispatch(topicActions.initPosts(id))
-	}
-}
-
-const mapStateToProps = (state) => {
-	return {
-		posts: state.posts
-	}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(TopicPage));

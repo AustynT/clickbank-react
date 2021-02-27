@@ -3,4 +3,7 @@ export {
 } from './topic';
 export {
     initPosts
-} from './post'
+} from './post';
+export {
+    initAds
+} from './ad'
