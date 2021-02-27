@@ -26,7 +26,7 @@ import Post from "./Post";
 // }
 // import * as actionTypes from "../store/actions/actionsTypes";
 
-class TopicPost extends Component {
+class TopicPage extends Component {
 	componentDidMount = () =>
 	{
 		const { id } = this.props.location.state.topic;
@@ -49,9 +49,12 @@ class TopicPost extends Component {
 		}));
 
 		return (
-			<div className="grid grid-cols-6 mt-6" >
-				<div className="fixed">Posts Page</div>
-				<div className="col-start-2 col-end-6">
+			<div className="h-full grid grid-cols-6 grid-rows-4" >
+				<div className="row-start-1 flex justify-center">
+				<div  className="fixed">Posts Page</div>
+				</div>
+
+				<div className="col-start-2 col-span-5">
 					{ postsArray}
 				</div>
 			</div>
@@ -71,4 +74,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(TopicPost));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(TopicPage));

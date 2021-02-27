@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Home from './Home';
-import TopicPost from './TopicPosts';
+import TopicPage from './TopicPage';
 import {Route,Switch} from 'react-router-dom';
 import * as topicActions from '../store/actions/index';
 import { connect } from 'react-redux';
@@ -13,9 +13,9 @@ class Container extends Component
 	render()
 	{
 		return(
-			<div className="container col-start-2 row-end-6 col-end-6 row-start-2 m-12 overflow-auto">
+			<div className="container col-start-2 col-end-11 row-start-1 row-end-7 mt-14 overflow-auto">
                 <Switch>
-                    <Route exact path="/topic/:title" component={TopicPost} />
+                    <Route exact path="/topic/:title" component={TopicPage} />
                     <Route exact path="/" component={Home}/>
                 </Switch>
 			</div>
