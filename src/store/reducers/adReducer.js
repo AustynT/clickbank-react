@@ -10,7 +10,7 @@ const adReducer = (state = initialState, action) =>
     {
         case actionTypes.SET_POSTS:
             return  {
-                posts: action.posts
+                posts: action.ads
             } 
         case actionTypes.UPDATE_POST:
             return {
