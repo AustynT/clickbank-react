@@ -1,10 +1,10 @@
 import * as actionTypes from "../actions/actionsTypes";
 
 const initialState = {
-    posts: []
+    ads: []
 };
 
-const postReducer = (state = initialState, action) => 
+const adReducer = (state = initialState, action) => 
 {
     switch (action.type) {
         case actionTypes.SET_POSTS:
@@ -30,4 +30,4 @@ const postReducer = (state = initialState, action) =>
     return state;
 };
 
-export default postReducer;
+export default adReducer;
