@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { withRouter } from "react-router";
 import * as topicActions from '../store/actions/index';
 import Post from "./Post";
+import Ad from "./Ad";
 
 class TopicPage extends Component {
 	componentDidMount = () =>
@@ -19,20 +20,26 @@ class TopicPage extends Component {
 
 		if (id !== prevId) {
 			this.props.getPosts(id);
+			this.props.getAds(id);
 		}
 	}
 
 	render = () => {
 		let title = this.props.location.state.topic.title
 		let posts = this.props.posts.posts;
-		console.log(this.props.ads.ads);
+		let ads = this.props.ads.ads.ads;
+		let adsArray;
+		console.log(ads);
 		let postsArray = (posts.map((post, i) => {
 			return (<Post key={i} post={post} />)
 		}));
 
-		// let adsArray = (posts.map((post, i) => {
-		// 	return (<Ad key={i} post={post} />)
-		// }));
+		if(Array.isArray(ads))
+		{
+			adsArray = (ads.map((ad, i) => {
+				return (<Ad key={i} ad={ad} />)
+			}));
+		}
 
 		return (
 			<div className="h-full grid grid-cols-14 grid-rows-6 " >
@@ -44,10 +51,7 @@ class TopicPage extends Component {
 				</div>
 				<div className="col-start-1 col-span-2 row-span-5">
 				<div className="flex items-center flex-col h-full">
-						<div className="h-full">ads</div>
-						<div className="h-full">ads</div>
-						<div className="h-full">ads</div>
-						<div className="h-full">ads</div>
+						<div className="h-full">{adsArray}</div>
 					</div>
 				</div>
 				<div className="col-start-13 col-span-2 row-span-5">
